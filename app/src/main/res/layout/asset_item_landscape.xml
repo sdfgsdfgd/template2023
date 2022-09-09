@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="kaan.template2023.ui.dashboard.LaunchItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_layout_landscape"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?selectableItemBackground"
+        android:onClick="@{() -> item.click}">
+
+
+        <!--            categories="@{item.categories}"-->
+        <LinearLayout
+            android:id="@+id/news_categories_landscape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/newsImageLandscape"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--            imageUrl="@{item.relatedImages[0].url}"-->
+        <ImageView
+            android:id="@+id/newsImageLandscape"
+            android:layout_width="0dp"
+            android:layout_height="190dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@id/newsTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/newsImageLandscape"
+            tools:src="@drawable/ic_launcher_background" />
+
+        <!--            android:text="@{item.headline}"-->
+        <TextView
+            android:id="@+id/newsTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/newsImageLandscape"
+            tools:text="US state capital washington is getting bombed by Al Qaida, PEOPLE ARE DYING" />
+
+        <!--            android:text="@{item.theAbstract}"-->
+        <TextView
+            android:id="@+id/newsAbstract"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:textSize="16sp"
+            android:textStyle="italic|bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/newsTitle"
+            tools:text="Even as the outgoing President broods over his second impeachment last week and the election he continues to falsely insist he won, his aides are at work to establish a Trump fiefdom in the Sunshine State." />
+
+        <!--            android:text="@{item.byLine}"-->
+        <TextView
+            android:id="@+id/byLine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/newsAbstract"
+            tools:text="by John Smith" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

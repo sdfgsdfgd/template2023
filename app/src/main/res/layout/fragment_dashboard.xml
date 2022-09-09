@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="kaan.template2023.ui.dashboard.DashboardViewModel" />
+
+        <!-- todo This is only a dummy to trigger the  'BR.item'  of recyclerview bindings.  -->
+        <variable
+            name="item"
+            type="kaan.template2023.ui.dashboard.DashboardViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context="kaan.tabcorp.ui.spacex.SpaceXFragment">
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:progressTint="@color/black"
+                android:foregroundTint="@color/black"
+                android:progressBackgroundTint="@color/black"
+                android:backgroundTint="@color/black"
+                android:secondaryProgressTint="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/selector_filter_bg"
+                style="@style/SelectableItemBackground"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:clickable="true"
+                android:elevation="14dp"
+                android:focusable="true"
+                android:onClick="@{() -> viewModel.onFilterClicked()}"
+                android:shadowColor="@color/gold"
+                app:layout_constraintBottom_toBottomOf="@id/cardview"
+                app:layout_constraintEnd_toEndOf="@id/cardview"
+                app:layout_constraintStart_toStartOf="@id/cardview"
+                app:layout_constraintTop_toTopOf="@id/cardview" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview"
+                android:layout_width="148dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:clickable="true"
+                android:elevation="14dp"
+                android:focusable="true"
+                app:cardCornerRadius="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                    android:id="@+id/img_thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start"
+                    android:background="@drawable/bg_dark_wood"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:scaleType="fitXY"
+                    android:textColor="@android:color/holo_green_dark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/graduate"
+                    android:gravity="center"
+                    android:text="@string/filter_by_success"
+                    android:textColor="@android:color/holo_green_dark"
+                    app:drawableTint="@android:color/holo_green_dark" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/launchesList"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                app:itemDiff="@{viewModel.assetsDiff}"
+                app:itemLayoutProvider="@{viewModel.assetsLayoutProvider}"
+                app:items="@{viewModel.assets}"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--                android:onClick="@{() -> viewModel.onSortToggleClicked()}"-->
+            <View
+                android:id="@+id/selector_filter_bg2"
+                style="@style/SelectableItemBackground"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:clickable="true"
+                android:elevation="14dp"
+                android:focusable="true"
+                android:shadowColor="@color/gold"
+                app:layout_constraintBottom_toBottomOf="@id/cardview2"
+                app:layout_constraintEnd_toEndOf="@id/cardview2"
+                app:layout_constraintStart_toStartOf="@id/cardview2"
+                app:layout_constraintTop_toTopOf="@id/cardview2" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview2"
+                android:layout_width="148dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="12dp"
+                android:clickable="true"
+                android:elevation="14dp"
+                android:focusable="true"
+                app:cardCornerRadius="14dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageButton
+                    android:id="@+id/img_thumbnail2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start"
+                    android:background="@drawable/bg_dark_wood"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:scaleType="fitXY"
+                    android:textColor="@android:color/holo_green_dark" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/graduate"
+                    android:gravity="center"
+                    android:text="@string/sort_by_date_mission_name"
+                    android:textColor="@android:color/holo_green_dark"
+                    app:drawableTint="@android:color/holo_green_dark" />
+
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

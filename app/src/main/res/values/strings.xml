@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">template2023</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+
+    <!-- Template 2022 - spacex strings   -->
+    <!--  Strings for navigation fragments -->
+    <string name="first_fragment_label">SpaceX</string>
+
+    <string name="bullet_point"><![CDATA[>]]></string>
+    <string name="launch_empty_description">-</string>
+    <string name="launch_no_description">No description</string>
+    <string name="launch_text_success">SUCCESS</string>
+    <string name="launch_text_unknown">Unknown</string>
+    <string name="launch_text_fail">FAIL</string>
+    <string name="launch_text_date_unknown">Unknown date</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="date_and_mission_text">%1$s - %2$s</string>
+    <string name="stub_text_launch_details">Crashed right into the ground after engine failure.</string>
+    <string name="filter_by_success">Filter by Success</string>
+    <string name="sort_by_date_mission_name">Sort by Date / Mission Name</string>
+</resources>

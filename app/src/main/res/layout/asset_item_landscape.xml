@@ -7,7 +7,7 @@
 
         <variable
             name="item"
-            type="kaan.template2023.ui.dashboard.LaunchItem" />
+            type="net.sdfgsdfg.luxr.ui.dashboard.LaunchItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -60,7 +60,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/newsImageLandscape"
-            tools:text="US state capital washington is getting bombed by Al Qaida, PEOPLE ARE DYING" />
+            tools:text="US state capital washington is getting bombed by Al Qaeda, PEOPLE ARE DYING" />
 
         <!--            android:text="@{item.theAbstract}"-->
         <TextView

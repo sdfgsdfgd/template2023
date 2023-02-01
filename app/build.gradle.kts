@@ -1,3 +1,4 @@
+// Module build file
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -5,15 +6,24 @@ plugins {
     kotlin("kapt")
 }
 
+repositories {
+    google()
+    mavenCentral()
+}
+
 android {
-    compileSdk = 32
+    namespace = "net.sdfgsdfg.luxr"
+    compileSdk = 33
 
     defaultConfig {
-        applicationId = "kaan.template2023"
+        applicationId = "net.sdfgsdfg.luxr"
         minSdk = 23
-        targetSdk = 32
+        targetSdk = 33
+
+        // ============================ Release ==================================== //
         versionCode = 1
-        versionName = "1.0"
+        versionName = "0.0.1"
+        //  ============================ - - - ====================================  //
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -40,20 +50,19 @@ android {
 
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
 
-    dataBinding {
-        android.buildFeatures.dataBinding = true
-    }
+    buildToolsVersion = "33.0.0"
 }
 
 dependencies {
     // Google Material Design
-    implementation("com.google.android.material:material:1.6.1")
+    implementation("com.google.android.material:material:1.8.0")
 
     // Core
-    implementation("androidx.core:core-ktx:1.8.0")
-    implementation("androidx.appcompat:appcompat:1.5.0")
+    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.appcompat:appcompat:1.6.0")
 
     // UI
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
@@ -63,22 +72,22 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
 
     // Nav
-    implementation("androidx.navigation:navigation-fragment-ktx:2.5.1")
-    implementation("androidx.navigation:navigation-ui-ktx:2.5.1")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
+    implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
 
     // Data Binding Runtime (req by  DataBindFragment base class' DB parameter
-    implementation("androidx.databinding:databinding-runtime:7.2.2")
+    implementation("androidx.databinding:databinding-runtime:7.4.0")
 
     // Dependency Injection - Hilt
-    implementation("com.google.dagger:hilt-android:2.43.2")
-    kapt("com.google.dagger:hilt-android-compiler:2.43.2")
+    implementation("com.google.dagger:hilt-android:2.44.2")
+    kapt("com.google.dagger:hilt-android-compiler:2.44.2")
     implementation("androidx.hilt:hilt-navigation-fragment:1.0.0")
 
     // Network
     implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.2")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
-    implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
+    implementation("com.squareup.moshi:moshi-kotlin:1.14.0")
 
     // Network Debug
     implementation("com.localebro:okhttpprofiler:1.0.8")
@@ -87,11 +96,11 @@ dependencies {
     implementation("com.squareup.picasso:picasso:2.71828") {
         exclude(module = "support-annotations")
         exclude(module = "exifinterface")
-//            exclude(module: ['exifinterface', 'support-annotations'])
+//      exclude(module: ['exifinterface', 'support-annotations'])
     }
 
     // Test
     testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.3")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }

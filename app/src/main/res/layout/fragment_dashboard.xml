@@ -8,12 +8,12 @@
 
         <variable
             name="viewModel"
-            type="kaan.template2023.ui.dashboard.DashboardViewModel" />
+            type="net.sdfgsdfg.luxr.ui.dashboard.DashboardViewModel" />
 
         <!-- todo This is only a dummy to trigger the  'BR.item'  of recyclerview bindings.  -->
         <variable
             name="item"
-            type="kaan.template2023.ui.dashboard.DashboardViewModel" />
+            type="net.sdfgsdfg.luxr.ui.dashboard.DashboardViewModel" />
     </data>
 
     <androidx.core.widget.NestedScrollView
@@ -24,7 +24,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context="kaan.tabcorp.ui.spacex.SpaceXFragment">
+            tools:context="sdfgsdfg.tabcorp.ui.spacex.SpaceXFragment">
 
             <ProgressBar
                 android:id="@+id/progress"

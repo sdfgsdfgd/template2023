@@ -1,3 +1,6 @@
+// Luxr, the Nostr client for Android
+rootProject.name = "Luxr"
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -6,20 +9,14 @@ pluginManagement {
     }
 }
 
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
+dependencyResolutionManagement {    // Default, can remove
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
 }
-rootProject.name = "template2023"
 
 
 // buildCache.local.isEnabled
 // buildCache.remote.isEnabled
 
 include(":app")
-
 //include(":module0")
 //include(":module1")

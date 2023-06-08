@@ -1,6 +1,6 @@
-< 2023 - Template Codebase >
+< 2023 - Template Codebase: Kotlin Traditional Views Template >
 ===============
-
+### This is kotlin views template, please prefer to use Compose Template instead. 
 
 <img width="625" alt="Screenshot 2023-02-01 at 12 27 48" src="https://user-images.githubusercontent.com/16299826/215922538-3325c38a-a9a2-401b-9534-fbdda0a7545f.png">
 
